@@ -14,7 +14,7 @@ public class DragonCave {
         System.out.println("Which cave will you go into? (1 or 2) \n");
 
         String chosenDoorString = playerInput.next();
-        int chosenDoorNumber =0;
+        int chosenDoorNumber;
 
         try {
             //Check if user input is valid
