@@ -14,15 +14,24 @@ public class DragonCave {
         System.out.println("Which cave will you go into? (1 or 2) \n");
 
         String chosenDoorString = playerInput.next();
-        int chosenDoorNumber = Integer.parseInt(chosenDoorString);
+        int chosenDoorNumber =0;
 
-        System.out.println("\nIt is dark and spooky...");
-        System.out.println("A large dragon jumps out in front of you! He opens his jaws and...");
-        if(door==chosenDoorNumber){
-            System.out.println("Breaths fire to show you all of his treasure...");
-            System.out.println("You take the treasure and become happily rich!");
-        }else {
-            System.out.println("Gobbles you down in one bite!");
+        try {
+            //Check if user input is valid
+            chosenDoorNumber = Integer.parseInt(chosenDoorString);
+
+            System.out.println("\nIt is dark and spooky...");
+            System.out.println("A large dragon jumps out in front of you! He opens his jaws and...");
+
+            //Check chosen door
+            if(door==chosenDoorNumber){
+                System.out.println("Breaths fire to show you all of his treasure...");
+                System.out.println("You take the treasure and become happily rich!");
+            }else {
+                System.out.println("Gobbles you down in one bite!");
+            }
+        }catch (Exception e){
+            System.out.println("User Bad Input!");
         }
 
     }
