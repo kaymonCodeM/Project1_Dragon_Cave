@@ -1,14 +1,14 @@
-import java.io.InputStream;
 import java.util.Random;
 import java.util.Scanner;
 
 public class DragonCave {
 
 
-    private InputStream in = System.in;
+    private Scanner playerInput;
     private int door = new Random().nextInt(2)+1;
 
     public void playDragonCave() {
+        setPlayerInput(new Scanner(System.in));
         System.out.println("You are in a land full of dragons. In front of you,");
         System.out.println("you see two caves.In one cave, the dragon is friendly");
         System.out.println("and will share his treasure with you. the other dragon");
@@ -16,15 +16,15 @@ public class DragonCave {
         System.out.println("Which cave will you go into? (1 or 2) \n");
 
         System.out.println(chooseDoor());
+        closePlayerInput();
     }
 
     public String chooseDoor(){
         String result ="";
-        Scanner playerInput = new Scanner(in);
         try {
             int chosenDoorNumber;
             //Check if user input is valid
-            chosenDoorNumber = Integer.parseInt(playerInput.next());
+            chosenDoorNumber = playerInput.nextInt();
 
             System.out.println("\nIt is dark and spooky...");
             System.out.println("A large dragon jumps out in front of you! He opens his jaws and...");
@@ -41,8 +41,8 @@ public class DragonCave {
         return result;
     }
 
-    public void setIn(InputStream in) {
-        this.in = in;
+    public void setPlayerInput(Scanner playerInput) {
+        this.playerInput = playerInput;
     }
 
     public void setDoor(int door) {
@@ -51,6 +51,14 @@ public class DragonCave {
 
     public int getDoor() {
         return door;
+    }
+
+    public Scanner getPlayerInput() {
+        return playerInput;
+    }
+
+    public void closePlayerInput(){
+        playerInput.close();
     }
 
 
