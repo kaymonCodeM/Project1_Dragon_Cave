@@ -24,11 +24,7 @@ public class DragonCave {
         try {
             int chosenDoorNumber;
             //Check if user input is valid
-<<<<<<< HEAD
             chosenDoorNumber = Integer.parseInt(playerInput.next());
-=======
-            chosenDoorNumber = playerInput.nextInt();
->>>>>>> master
 
             System.out.println("\nIt is dark and spooky...");
             System.out.println("A large dragon jumps out in front of you! He opens his jaws and...");
